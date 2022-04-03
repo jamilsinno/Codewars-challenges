@@ -20,3 +20,34 @@
 
 // solution
 
+function capitalize(s){
+    // const arr = ['','']
+    // upperCase = true
+
+    // for(let i = 0; i < arr.length; i++){
+    //     if(upperCase === toUpperCase){
+    //         arr[0] += s[i].toUpperCase()
+    //         upperCase !== upperCase
+    //     }else{
+    //         arr[0] += s[i+1].toLowerCase()
+    //         upperCase !== upperCase
+    //     }
+    // }
+
+    // UpperCase = false
+    // for(let i = 0; i < s.length; i++){
+    //     if(upperCase === true){
+    //         arr[1] += s.[i].toUpperCase()
+    //         upperCase !== upperCase
+    //     }else{
+    //         arr[1] += s[i].toUpperCase()
+    //         upperCase !== upperCase
+    //     }
+    // }
+    // return arr
+
+    const odd = s.split('').map((l, i)=> (i%2 === 0) ? l : l.toUpperCase()).join('')
+    const even = s.split('').map((l, i)=> (i%2 === 0) ? l.toUpperCase() : l).join('')
+    return [even, odd];
+
+  };
