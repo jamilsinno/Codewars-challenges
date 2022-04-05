@@ -1,53 +1,43 @@
-// Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
-// For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
-// The input will be a lowercase string with no spaces.
-// Good luck!
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+// The input to the function will be an array of three distinct numbers (Haskell: a tuple).
 
-// If you like this Kata, please try:
+// For example:
+// gimme([2, 3, 1]) => 0
 
-// Indexed capitalization
-// Even-odd disparity
+// 2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
 
-// test cases
+// Another example (just to make sure it is clear):
+// gimme([5, 10, 14]) => 1
 
-// describe("Basic tests", function(){
-//     Test.assertDeepEquals(capitalize("abcdef"),['AbCdEf', 'aBcDeF']);
-//     Test.assertDeepEquals(capitalize("codewars"),['CoDeWaRs', 'cOdEwArS']);
-//     Test.assertDeepEquals(capitalize("abracadabra"),['AbRaCaDaBrA', 'aBrAcAdAbRa']);
-//     Test.assertDeepEquals(capitalize("codewarriors"),['CoDeWaRrIoRs', 'cOdEwArRiOrS']);
-//     });
+// 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
 
+// sample tests
+
+// const strictEqual = require('chai').assert.strictEqual;
+
+// function doTest (triplet, expected) {
+// 	const actual = gimme(triplet);
+// 	strictEqual(actual, expected, `for [${triplet}], expected ${expected} but got ${actual}`);
+// }
+
+// describe("Basic Test", function () {
+// 	it("Tests for integers", function () {
+// 		doTest([2, 3, 1], 0);
+// 		doTest([5, 10, 14], 1);
+// 	});
+// 	it("Tests for floats", function () {
+// 		doTest([2.1, 3.2, 1.4], 0);
+// 		doTest([5.9, 10.4, 14.2], 1);
+// 	});
+// 	it("Tests for negative numbers", function () {
+// 		doTest([-2, -3, -1], 0);
+// 		doTest([-5, -10, -14], 1);
+// 	});
+// 	it("Tests for mixed numbers", function () {
+// 		doTest([-2, -3.2, 1], 0);
+// 		doTest([-5.2, -10.6, 14], 0);
+// 	});
+// });
 
 // solution
 
-function capitalize(s){
-    // const arr = ['','']
-    // upperCase = true
-
-    // for(let i = 0; i < arr.length; i++){
-    //     if(upperCase === toUpperCase){
-    //         arr[0] += s[i].toUpperCase()
-    //         upperCase !== upperCase
-    //     }else{
-    //         arr[0] += s[i+1].toLowerCase()
-    //         upperCase !== upperCase
-    //     }
-    // }
-
-    // UpperCase = false
-    // for(let i = 0; i < s.length; i++){
-    //     if(upperCase === true){
-    //         arr[1] += s.[i].toUpperCase()
-    //         upperCase !== upperCase
-    //     }else{
-    //         arr[1] += s[i].toUpperCase()
-    //         upperCase !== upperCase
-    //     }
-    // }
-    // return arr
-
-    const odd = s.split('').map((l, i)=> (i%2 === 0) ? l : l.toUpperCase()).join('')
-    const even = s.split('').map((l, i)=> (i%2 === 0) ? l.toUpperCase() : l).join('')
-    return [even, odd];
-
-  };
