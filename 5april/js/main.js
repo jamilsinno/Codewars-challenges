@@ -1,58 +1,29 @@
-// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
-// The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+// For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
 
-// For example:
-// gimme([2, 3, 1]) => 0
-
-// 2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
-
-// Another example (just to make sure it is clear):
-// gimme([5, 10, 14]) => 1
-
-// 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
 // sample tests
 
-// const strictEqual = require('chai').assert.strictEqual;
+// const chai = require("chai");
+// const assert = chai.assert;
 
-// function doTest (triplet, expected) {
-// 	const actual = gimme(triplet);
-// 	strictEqual(actual, expected, `for [${triplet}], expected ${expected} but got ${actual}`);
-// }
+// describe("Your function", function() {
+//   it("should work for basic tests", function() {
+//     assert.strictEqual(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13 , "Sum should be 13");
+//     assert.strictEqual(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6 , "Sum should be 6");
+//     assert.strictEqual(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10 , "Sum should be 10");
+//     assert.strictEqual(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24 , "Sum should be 24");
+//     assert.strictEqual(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16 , "Sum should be 16");
+//   });
+// });  
 
-// describe("Basic Test", function () {
-// 	it("Tests for integers", function () {
-// 		doTest([2, 3, 1], 0);
-// 		doTest([5, 10, 14], 1);
-// 	});
-// 	it("Tests for floats", function () {
-// 		doTest([2.1, 3.2, 1.4], 0);
-// 		doTest([5.9, 10.4, 14.2], 1);
-// 	});
-// 	it("Tests for negative numbers", function () {
-// 		doTest([-2, -3, -1], 0);
-// 		doTest([-5, -10, -14], 1);
-// 	});
-// 	it("Tests for mixed numbers", function () {
-// 		doTest([-2, -3.2, 1], 0);
-// 		doTest([-5.2, -10.6, 14], 0);
-// 	});
-// });
+// solution 
 
-// solution - my solution (working)
-
-function gimme (triplet) {
-  if( (triplet[0] < triplet[1] && triplet[1] < triplet[2]) || (triplet[2] < triplet[1] && triplet[1] < triplet[0]) ){
-    return 1
-  }else if( (triplet[1] < triplet[0] && triplet[0] < triplet[2]) || (triplet[2] < triplet[0] && triplet[0] < triplet[1]) ){
-    return 0
-  }else{
-    return 2
-  }
+function sumTwoSmallestNumbers(numbers) {  
+  //Code here
+  //sort array
+  numbers.sort((a,b) => a-b)
+  // get index 0 and 1 and return
+  return numbers[0] + numbers[1]
 }
-
-// solution best practice
-
-// function gimme(a) {
-//   return a.indexOf(a.concat().sort(function(a, b) { return a - b })[1])
-// }
