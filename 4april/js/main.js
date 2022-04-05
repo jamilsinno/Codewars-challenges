@@ -39,5 +39,20 @@
 // 	});
 // });
 
-// solution
+// solution - my solution (working)
 
+function gimme (triplet) {
+  if( (triplet[0] < triplet[1] && triplet[1] < triplet[2]) || (triplet[2] < triplet[1] && triplet[1] < triplet[0]) ){
+    return 1
+  }else if( (triplet[1] < triplet[0] && triplet[0] < triplet[2]) || (triplet[2] < triplet[0] && triplet[0] < triplet[1]) ){
+    return 0
+  }else{
+    return 2
+  }
+}
+
+// solution best practice
+
+// function gimme(a) {
+//   return a.indexOf(a.concat().sort(function(a, b) { return a - b })[1])
+// }
