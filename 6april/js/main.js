@@ -19,10 +19,13 @@
 //     })
 //   })
 
-// solution 
+// solution - my solution does not work
 
 function sumDigits(number){
-
+  return Math.abs(number).toString().split('').reduce( (pV, cV) => pV +cV, 0)
 }
 
-
+// working solution
+function sumDigits(number){
+  return Math.abs(number).toString().split('').reduce( (pV, cV) => Number(pV) + Number(cV), 0)
+}
