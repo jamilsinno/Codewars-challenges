@@ -27,8 +27,18 @@
 
 // });
 
-// solution 
+// solution - did not know how to begin solution. Looked at answers. Best practice was to use parseInt()
 
 const binaryArrayToNumber = arr => {
   // your code
+  //find the length of the array
+  //assign first index value to array length and count down
+  //reduce the value
+  return parseInt(arr.join(''), 2)
 };
+
+// another solution is to reduce it
+
+// const binaryArrayToNumber = arr => {
+//   return arr.reduce((total, cur) => (total = total * 2 + cur), 0);
+// }
