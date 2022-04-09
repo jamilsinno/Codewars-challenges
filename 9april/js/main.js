@@ -28,34 +28,37 @@
 
 // solution - ddes not count multiple d in an element. Only counts one
 
-// function nbDig(n, d) {
-//   // your code
-//   let arr = []
-//   // Make array and square elements
-//   for(let i = 0; i <= n; i++){
-//     arr.push(i**2)
-//   }
-//   console.log(arr)
-
-//   // go through array and check for the index d and add to count
-  
-//   let count = 0
-
-//   for(let j = 0; j<arr.length; j++){
-//     if(arr[j].toString().includes(d)){
-//       count += 1
-//     }
-//   } 
-//   return count 
-// }
-
-
-// working solution
-
 function nbDig(n, d) {
-  var o = '';
-    for(var i = 0; i <= n; i++){
-      o += Math.pow(i, 2);
+  // your code
+  let arr = []
+  // Make array and square elements
+  for(let i = 0; i <= n; i++){
+    arr.push(i**2)
+  }
+  console.log(arr)
+
+  // go through array and check for the index d and add to count
+  
+  let count = 0
+
+  let newArr = arr.toString().split('')
+  console.log(newArr)
+
+  for(let j = 0; j<newArr.length; j++){
+    if(newArr[j].toString().includes(d)){
+      count += 1
     }
-  return o.split(d).length-1
+  } 
+  return count 
 }
+
+
+// // working solution
+
+// function nbDig(n, d) {
+//   var o = '';
+//     for(var i = 0; i <= n; i++){
+//       o += Math.pow(i, 2);
+//     }
+//   return o.split(d).length-1
+// }
