@@ -33,4 +33,21 @@
 
 function nbDig(n, d) {
   // your code
+  let arr = []
+  // Make array and square elements
+  for(let i = 0; i <= n; i++){
+    arr.push(i**2)
+  }
+  console.log(arr)
+
+  // go through array and check for the index d and add to count
+  
+  let count = 0
+
+  for(let j = 0; j<arr.length; j++){
+    if(arr[j].toString().includes(d)){
+      count += 1
+    }
+  } 
+  return count 
 }
