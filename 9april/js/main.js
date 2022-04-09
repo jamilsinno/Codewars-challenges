@@ -1,9 +1,6 @@
 // Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer.
-
 // Square all numbers k (0 <= k <= n) between 0 and n.
-
 // Count the numbers of digits d used in the writing of all the k**2.
-
 // Call nb_dig (or nbDig or ...) the function taking n and d as parameters and returning this count.
 
 // Examples:
@@ -29,25 +26,36 @@
 //   });
 // });
 
-// solution 
+// solution - ddes not count multiple d in an element. Only counts one
+
+// function nbDig(n, d) {
+//   // your code
+//   let arr = []
+//   // Make array and square elements
+//   for(let i = 0; i <= n; i++){
+//     arr.push(i**2)
+//   }
+//   console.log(arr)
+
+//   // go through array and check for the index d and add to count
+  
+//   let count = 0
+
+//   for(let j = 0; j<arr.length; j++){
+//     if(arr[j].toString().includes(d)){
+//       count += 1
+//     }
+//   } 
+//   return count 
+// }
+
+
+// working solution
 
 function nbDig(n, d) {
-  // your code
-  let arr = []
-  // Make array and square elements
-  for(let i = 0; i <= n; i++){
-    arr.push(i**2)
-  }
-  console.log(arr)
-
-  // go through array and check for the index d and add to count
-  
-  let count = 0
-
-  for(let j = 0; j<arr.length; j++){
-    if(arr[j].toString().includes(d)){
-      count += 1
+  var o = '';
+    for(var i = 0; i <= n; i++){
+      o += Math.pow(i, 2);
     }
-  } 
-  return count 
+  return o.split(d).length-1
 }
