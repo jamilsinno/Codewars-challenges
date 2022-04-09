@@ -30,7 +30,7 @@
 
 function nbDig(n, d) {
   // your code
-  let arr = []
+  const arr = []
   // Make array and square elements
   for(let i = 0; i <= n; i++){
     arr.push(i**2)
@@ -41,7 +41,7 @@ function nbDig(n, d) {
   
   let count = 0
 
-  let newArr = arr.toString().split('')
+  const newArr = arr.toString().split('')
   console.log(newArr)
 
   for(let j = 0; j<newArr.length; j++){
