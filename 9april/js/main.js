@@ -41,11 +41,11 @@ function nbDig(n, d) {
   
   let count = 0
 
-  const newArr = arr.toString().split('')
+  const newArr = arr.join(', ').split('')
   console.log(newArr)
 
   for(let j = 0; j<newArr.length; j++){
-    if(newArr[j].toString().includes(d)){
+    if(newArr[j].includes(d)){
       count += 1
     }
   } 
