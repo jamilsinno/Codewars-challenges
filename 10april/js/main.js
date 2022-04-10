@@ -17,8 +17,13 @@
 //   })
 // })
 
-// solution - 
+// solution - solution works
 
 function smallEnough(a, limit){
-
+  let arr = a.map( x => x > limit ? false : true)
+  if(arr.includes(false)){
+    return false
+  }else{
+    return true
+  }
 }
