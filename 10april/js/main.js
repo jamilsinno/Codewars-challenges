@@ -27,3 +27,9 @@ function smallEnough(a, limit){
     return true
   }
 }
+
+// solution with spread operator
+
+// function smallEnough(a, limit){
+//   return Math.max(...a) <= limit
+// }
