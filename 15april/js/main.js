@@ -9,20 +9,23 @@
 
 //sample tests
 
-describe("Tests", () => {
-    it("test", () => {
-  var str = "How can mirrors be real if our eyes aren't real";
-  Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real");
+// describe("Tests", () => {
+//     it("test", () => {
+//   var str = "How can mirrors be real if our eyes aren't real";
+//   Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real");
   
-    });
-  });
+//     });
+//   });
 
 // solution -- solution works
 
 function jadenCased(str){
-    return str.forEach( (x,i) => {
-        if(x[i] === " "){
-            x[i+1].toUpperCase()
-        }
-    })
+    return String(str).split(' ').map( x => x[0].toUpperCase() + x.substring(1).toLowerCase()).join(' ')
 }
+
+// solution to work with codewars 
+
+// String.prototype.toJadenCase = function () {
+//     //...
+//      return this.split(' ').map( x => x[0].toUpperCase() + x.substring(1).toLowerCase()).join(' ')
+//   };
