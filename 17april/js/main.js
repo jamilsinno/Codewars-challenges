@@ -27,5 +27,13 @@
 
 function areYouPlayingBanjo(name) {
   // Implement me
-  return name;
+  //split string
+  // find first index if r then return
+  let arr = name.split('')
+
+  if(arr[0] === 'R' || arr[0] === 'r'){
+    return `${name} plays banjo` 
+  }else{
+    return `${name} does not play banjo`
+  }
 }
