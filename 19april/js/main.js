@@ -21,4 +21,8 @@
 
 function makeNegative(num) {
   // Code?
+  if(num > 0){
+    Number(num) * -1
+  }
+  return
 }
