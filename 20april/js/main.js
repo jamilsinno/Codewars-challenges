@@ -23,9 +23,9 @@
 
 function cockroachSpeed(s) {
   //Good Luck!
-  return Math.floor(s*1000/3.6)
+  return Math.floor(s*100/3.6)
 }
 
 
 
-// km/h = 1000m/60min = 1000000cm/3600s = 1000/3.6
+// km/h = 1000m/60min = 100000cm/3600s = 100/3.6
