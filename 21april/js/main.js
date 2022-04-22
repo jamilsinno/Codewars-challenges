@@ -72,14 +72,11 @@ function solution(str, ending){
   let endArr = ending.split('').reverse()
   
   for(let i = 0; i<endArr.length; i++){
-    console.log(strArr[i])
-    console.log(endArr[i])
-    if(strArr[i] === endArr[i]){
-      return true
-    }else{
+    if(strArr[i] !== endArr[i]){
       return false
     }
   }
+  return true
 }
 
 
