@@ -1,81 +1,56 @@
-// In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
 
-// At the end of the first year there will be: 
-// 1000 + 1000 * 0.02 + 50 => 1070 inhabitants
-
-// At the end of the 2nd year there will be: 
-// 1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)
-
-// At the end of the 3rd year there will be:
-// 1141 + 1141 * 0.02 + 50 => 1213
-
-// It will need 3 entire years.
-// More generally given parameters:
-
-// p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
-
-// the function nb_year should return n number of entire years needed to get a population greater or equal to p.
-
-// aug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)
-
-// Examples:
-// nb_year(1500, 5, 100, 5000) -> 15
-// nb_year(1500000, 2.5, 10000, 2000000) -> 10
-// Note:
-// Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
+// Examples
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
 
 // sample tests
 
-// describe("nbYear",function() {
-//   it("Basic tests",function() {    
-//       Test.assertEquals(nbYear(1500, 5, 100, 5000), 15);
-//       Test.assertEquals(nbYear(1500000, 2.5, 10000, 2000000), 10);
-//       Test.assertEquals(nbYear(1500000, 0.25, 1000, 2000000), 94);
-//   })})
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(reverseWords('The quick brown fox jumps over the lazy dog.'), 'ehT kciuq nworb xof spmuj revo eht yzal .god');
+//     assert.strictEqual(reverseWords('apple'), 'elppa');
+//     assert.strictEqual(reverseWords('a b c d'), 'a b c d');
+//     assert.strictEqual(reverseWords('double  spaced  words'), 'elbuod  decaps  sdrow');
+//   });
+// });
 
 // solution
 
-function nbYear(p0, percent, aug, p) {
-  // your code
-  let count = 0
-  while(p0<p){
-    p0 += p0 * percent/100 + aug
-    count++
-  }
-  return count
+function reverseWords(str) {
+  // Go for it
+  return str.split('').reverse().join('').split(' ').reverse().join(' ')
 }
 
 //--------------------------------------------------------------------
 
-// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
 
-// Examples:
+// The binary number returned should be a string.
 
-// solution('abc', 'bc') // returns true
-// solution('abc', 'd') // returns false
+// Examples:(Input1, Input2 --> Output (explanation)))
 
+// 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+// 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
 
 // sample tests
 
-// describe("Tests", () => {
-//   it("test", () => {
-// Test.assertEquals(solution('abcde', 'cde'), true)
-// Test.assertEquals(solution('abcde', 'abc'), false)
-// });
+// describe("addBinary(1,2)", function() {
+//   var results1 = addBinary(1,2);
+//   it("Should return something that isn't falsy", function() {
+//     Test.expect(results1, "Something is wrong, no results!");
+//   });
+//   it("Should return \"11\"", function() {
+//     Test.assertEquals(results1, "11");
+//   });
 // });
 
 // solution
 
-function solution(str, ending){
-  // TODO: complete
-  let strArr = str.split('').reverse()
-  let endArr = ending.split('').reverse()
-  
-  for(let i = 0; i<endArr.length; i++){
-    if(strArr[i] !== endArr[i]){
-      return false
-    }
-  }
-  return true
+function addBinary(a,b) {
+  return (a+b >>> 0).toString(2)
 }
-
