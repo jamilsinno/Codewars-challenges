@@ -45,5 +45,41 @@ function nbYear(p0, percent, aug, p) {
   return count
 }
 
+//--------------------------------------------------------------------
+
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+// Examples:
+
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+
+
+// sample tests
+
+// describe("Tests", () => {
+//   it("test", () => {
+// Test.assertEquals(solution('abcde', 'cde'), true)
+// Test.assertEquals(solution('abcde', 'abc'), false)
+// });
+// });
+
+// solution
+
+function solution(str, ending){
+  // TODO: complete
+  let strArr = str.split('').reverse()
+  let endArr = ending.split('').reverse()
+  
+  for(let i = 0; i<endArr.length; i++){
+    console.log(strArr[i])
+    console.log(endArr[i])
+    if(strArr[i] === endArr[i]){
+      return true
+    }else{
+      return false
+    }
+  }
+}
 
 
