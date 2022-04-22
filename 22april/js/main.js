@@ -106,14 +106,36 @@
 
 // solution
 
-var countSheep = function (num){
-  //your code here
-  let print = ""
-  if(num === 0 || num === null){
-    return ""
-  }
-  for(let i = 1; i<=num; i++){
-    print += `${i} sheep...`
-  }
-  return print 
-}
+// var countSheep = function (num){
+//   //your code here
+//   let print = ""
+//   if(num === 0 || num === null){
+//     return ""
+//   }
+//   for(let i = 1; i<=num; i++){
+//     print += `${i} sheep...`
+//   }
+//   return print 
+// }
+
+//--------------------------------------------------------------------
+
+// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+// sample tests
+
+// const { assert } = require("chai")
+
+// describe("Basic tests", () => {
+//   it("Testing for basic tests", () => {
+//     assert.strictEqual(boolToWord(true), 'Yes')
+//     assert.strictEqual(boolToWord(false), 'No')
+//     });
+//   });
+
+// solution
+
+// function boolToWord( bool ){
+//   //...
+//   return bool ? 'Yes' : 'No'
+// }
