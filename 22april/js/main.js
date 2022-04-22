@@ -21,10 +21,10 @@
 
 // solution
 
-function reverseWords(str) {
-  // Go for it
-  return str.split('').reverse().join('').split(' ').reverse().join(' ')
-}
+// function reverseWords(str) {
+//   // Go for it
+//   return str.split('').reverse().join('').split(' ').reverse().join(' ')
+// }
 
 //--------------------------------------------------------------------
 
@@ -51,6 +51,69 @@ function reverseWords(str) {
 
 // solution
 
-function addBinary(a,b) {
-  return (a+b >>> 0).toString(2)
+// function addBinary(a,b) {
+//   return (a+b >>> 0).toString(2)
+// }
+
+//--------------------------------------------------------------------
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+// sample tests
+
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Basic Tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(simpleMultiplication(2),16,'Should return double given argument..')
+//     assert.strictEqual(simpleMultiplication(1),9,'Should return double given argument..')
+//     assert.strictEqual(simpleMultiplication(8),64,'Should return given argument times eight...')
+//     assert.strictEqual(simpleMultiplication(4),32,'Should return given argument times eight...')
+//     assert.strictEqual(simpleMultiplication(5),45,'Should return given argument times nine...')
+//   });
+// });
+
+// solution
+
+// function simpleMultiplication(number) {
+//   // your code........
+// return number % 2 === 0 ? number * 8 : number * 9
+// }
+
+//--------------------------------------------------------------------
+
+// If you can't sleep, just count sheep!!
+
+// Task:
+// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+
+// sample tests
+
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Fixed tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(countSheep(0), "");
+//     assert.strictEqual(countSheep(1), "1 sheep...");
+//     assert.strictEqual(countSheep(2), "1 sheep...2 sheep...");
+//     assert.strictEqual(countSheep(3), "1 sheep...2 sheep...3 sheep...");
+//   });
+// });
+
+// solution
+
+var countSheep = function (num){
+  //your code here
+  let print = ""
+  if(num === 0 || num === null){
+    return ""
+  }
+  for(let i = 1; i<=num; i++){
+    print += `${i} sheep...`
+  }
+  return print 
 }
