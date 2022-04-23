@@ -74,6 +74,78 @@ function grow(x){
 //   });
 // });
 
+// my soltion -> missing couple of steps does not work
+
+// function isPangram(string){
+//   //create variables and split
+//   let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+//   let arr = string.split('').sort().filter( (x,i) => x === " " || x[i] === x[i+1] )
+
+//   // compare the alphabet string with the array go to next when match
+  
+//   for(let i = 0; i< alphabet.length; i++){
+//     if( alphabet[i] !== arr[i]){
+//       return false
+//     }
+//   }
+//   return true
+// }
+
+//working solution 
+
 function isPangram(string){
-  //...
+  //create variables and split
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  
+  let arr = string.toLowerCase().split('')
+  .sort()
+  .filter( x => alphabet.includes(x))
+  .filter( function(x, n, s) {
+  return s.indexOf(x) == n
+} )
+  
+  console.log(arr)
+  // compare the alphabet string with the array go to next when match
+  
+  for(let i = 0; i< alphabet.length; i++){
+    if( alphabet[i] !== arr[i]){
+      return false
+    }
+  }
+  return true
+}
+
+//--------------------------------------------------------------------
+
+// Your task is to make two functions (max and min, or maximum and minimum, etc., depending on the language) that receive a list of integers as input and return, respectively, the largest and lowest number in that list.
+
+// Examples (Input -> Output)
+// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
+// * [5]                             -> min = 5, max = 5
+// Notes
+// You may consider that there will not be any empty arrays/vectors.
+
+// sample questions
+
+// describe("Test", function(){
+//   it("Examples", function(){
+//     Test.assertEquals(min([-52, 56, 30, 29, -54, 0, -110]), -110);
+//     Test.assertEquals(min([42, 54, 65, 87, 0]), 0);
+//     Test.assertEquals(max([4,6,2,1,9,63,-134,566]), 566);
+//     Test.assertEquals(max([5]), 5);
+//   });
+// });
+
+// solution
+
+var min = function(list){
+    
+  return Math.min(...list);
+}
+
+var max = function(list){
+  
+  return Math.max(...list);
 }
