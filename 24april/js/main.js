@@ -58,3 +58,90 @@ function firstNonConsecutive (arr) {
 
 
 //--------------------------------------------------------------------
+
+// Your function takes two arguments:
+
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+
+// sample tests
+
+// describe("Sample tests", function(){
+//   it("Testing for dad's age: 36 and son's age: 7", function(){
+//     Test.assertEquals(twiceAsOld(36,7) , 22);
+//   });  
+//   it("Testing for dad's age: 55 and son's age: 30", function(){
+//     Test.assertEquals(twiceAsOld(55,30) , 5);
+//   });
+//   it("Testing for dad's age: 42 and son's age: 21", function(){
+//     Test.assertEquals(twiceAsOld(42,21) , 0);
+//   });
+//   it("Testing for dad's age: 22 and son's age: 1", function(){
+//     Test.assertEquals(twiceAsOld(22,1) , 20);
+//   });
+//   it("Testing for dad's age: 29 and son's age: 0", function(){
+//     Test.assertEquals(twiceAsOld(29,0) , 29);
+//   });
+// });
+
+// solution
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  return Math.abs(dadYearsOld - 2 * sonYearsOld);
+}
+
+
+//--------------------------------------------------------------------
+
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+// Examples
+// [7] should return 7, because it occurs 1 time (which is odd).
+// [0] should return 0, because it occurs 1 time (which is odd).
+// [1,1,2] should return 2, because it occurs 1 time (which is odd).
+// [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+// [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
+
+// sample tests
+
+// function doTest(a, n) {
+//   console.log("A = ", a);
+//   console.log("n = ", n);
+//   Test.assertEquals(findOdd(a), n);
+// }
+// describe('Example tests', function() {
+//   doTest([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5], 5);
+//   doTest([1,1,2,-2,5,2,4,4,-1,-2,5], -1);
+//   doTest([20,1,1,2,2,3,3,5,5,4,20,4,5], 5);
+//   doTest([10], 10);
+//   doTest([1,1,1,1,1,1,10,1,1,1,1], 10);
+//   doTest([5,4,3,2,1,5,4,3,2,10,10], 1);
+// });
+
+// solution
+
+function findOdd(A) {
+  //happy coding!
+  // create obj[val] and count each repeating element
+  const findOdd = A.reduce( function(obj, item){
+    if(!obj[item]){
+      obj[item] = 0
+    }
+    obj[item]++
+    return obj
+  }, {})
+  console.log(findOdd)
+  
+  // divide by 2 to see which is odd
+  for (const key in findOdd){
+    if(findOdd[key] %2 !== 0){
+      return Number(key)
+    }
+  }
+}
+
+
+//--------------------------------------------------------------------
