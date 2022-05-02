@@ -213,3 +213,182 @@ function order(words){
 function removeExclamationMarks(s) {
   return s.split('').filter( x => x !== '!').join('');
 }
+
+//--------------------------------------------------------------------
+
+// Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
+
+// For example: ["3:1", "2:2", "0:1", ...]
+
+// Write a function that takes such collection and counts the points of our team in the championship. Rules for counting points for each match:
+
+// if x > y: 3 points
+// if x < y: 0 point
+// if x = y: 1 point
+// Notes:
+
+// there are 10 matches in the championship
+// 0 <= x <= 4
+// 0 <= y <= 4
+
+// sample test
+
+// describe("Basic tests", function(){
+//   it("Testing for points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3'])", function(){
+//     Test.assertEquals(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]) , 30);
+//   });  
+//   it("Testing for points(['1:1','2:2','3:3','4:4','2:2','3:3','4:4','3:3','4:4','4:4'])", function(){
+//     Test.assertEquals(points(["1:1","2:2","3:3","4:4","2:2","3:3","4:4","3:3","4:4","4:4"]) , 10);
+//   });
+//   it("Testing for points(['0:1','0:2','0:3','0:4','1:2','1:3','1:4','2:3','2:4','3:4'])", function(){
+//     Test.assertEquals(points(["0:1","0:2","0:3","0:4","1:2","1:3","1:4","2:3","2:4","3:4"]) , 0);
+//   });
+//   it("Testing for points(['1:0','2:0','3:0','4:0','2:1','1:3','1:4','2:3','2:4','3:4'])", function(){
+//     Test.assertEquals(points(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]) , 15);
+//   });
+//   it("Testing for points(['1:0','2:0','3:0','4:4','2:2','3:3','1:4','2:3','2:4','3:4'])", function(){
+//     Test.assertEquals(points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"]) , 12);
+//   });
+// });
+
+// solution
+
+function points(games) {
+  // your code here
+  // for loop to go through initial array
+  // in each element split at the :
+  // compare the two numbers
+  let points = 0
+  
+  for(let i = 0; i<games.length; i++){
+    if(games[i][0] > games[i][2]){
+      points += 3
+    } else if(games[i][0] === games[i][2]){
+      points += 1
+    }else{
+      points += 0
+    }
+  }
+  return points
+}
+
+//--------------------------------------------------------------------
+
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+// Examples
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
+
+// Input: []
+// Output: 0
+
+// Input: [-2.398]
+// Output: -2.398
+
+// Assumptions
+// You can assume that you are only given numbers.
+// You cannot assume the size of the array.
+// You can assume that you do get an array and if the array is empty, return 0.
+// What We're Testing
+// We're testing basic loops and math operations. This is for beginners who are just learning loops and math operations.
+// Advanced users may find this extremely easy and can easily write this in one line.
+
+// sample test
+
+// describe("Tests", () => {
+//   it("test", () => {
+// Test.assertEquals(sum([]), 0);
+// Test.assertEquals(sum([1, 5.2, 4, 0, -1]), 9.2);
+//   });
+// });
+
+// solution
+
+// Sum Numbers
+function sum (numbers) {
+  //"use strict";
+  
+  let counter = 0
+
+  for(let i = 0; i< numbers.length; i++){
+    counter += numbers[i]
+  }
+  return counter
+};
+
+//--------------------------------------------------------------------
+
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 123456789 Output: 987654321
+
+// sample test
+
+// const { assert } = require("chai")
+
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(descendingOrder(0), 0)
+//     assert.strictEqual(descendingOrder(1), 1)
+//     assert.strictEqual(descendingOrder(111), 111)
+//     assert.strictEqual(descendingOrder(15), 51)
+//     assert.strictEqual(descendingOrder(1021), 2110)
+//     assert.strictEqual(descendingOrder(123456789), 987654321)
+//     })
+//   })
+
+// solution
+
+
+function descendingOrder(n){
+  //...
+  return +String(n).split('').sort( (a, b) => Number(b) - Number(a)).join('')
+}
+
+//--------------------------------------------------------------------
+
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+// NOTE: All numbers will be whole numbers greater than 0.
+
+// If you liked this kata, check out part 2!!
+
+// sample test
+
+// const { assert } = require("chai")
+
+// describe("Tests", () => {
+//   it("test", () => {
+// Test.assertEquals(expandedForm(12), '10 + 2');
+// Test.assertEquals(expandedForm(42), '40 + 2');
+// Test.assertEquals(expandedForm(70304), '70000 + 300 + 4');
+//   });
+// });
+
+// solution
+
+function expandedForm(num) {
+  // Your code here
+  // make the number into a string, split, then reverse
+  // for loop and num[i] * 10^i
+  
+  let revNum = String(num).split('')
+  
+  let solution = []
+
+  for(let i = 0; i<revNum.length; i++){      
+      solution.push(revNum[i] * 10**(revNum.length - i-1))
+  }
+  
+  let ans = solution.filter( x => x !== 0)
+  return ans.join(' + ')
+}
