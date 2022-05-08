@@ -92,3 +92,149 @@ function checkForFactor (base, factor) {
 }
 
 // --------------------------------------------------------------------------
+
+// Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+
+// The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+
+// setAlarm(true, true) -> false
+// setAlarm(false, true) -> false
+// setAlarm(false, false) -> false
+// setAlarm(true, false) -> true
+
+// sample tests
+
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Test Suite",()=>{
+//   it("Fixed tests",()=>{
+//     assert.strictEqual(setAlarm(true, true),  false,"Should be false.");
+//     assert.strictEqual(setAlarm(false,true),  false, "Should be false.");
+//     assert.strictEqual(setAlarm(true, false), true,"Should be true.");
+//   });
+// });
+
+// solution
+
+function setAlarm(employed, vacation){
+  return employed === true && vacation === false
+}
+
+// --------------------------------------------------------------------------
+
+// Nathan loves cycling.
+
+// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+
+// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+
+// For example:
+
+// time = 3 ----> litres = 1
+
+// time = 6.7---> litres = 3
+
+// time = 11.8--> litres = 5
+
+// sample tests
+
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe('Fixed tests', () => {
+//   it('Tests', () => {
+//     assert.strictEqual(litres(2), 1, 'should return 1 litre');
+//     assert.strictEqual(litres(1.4), 0, 'should return 0 litres');
+//     assert.strictEqual(litres(12.3), 6, 'should return 6 litres');
+//     assert.strictEqual(litres(0.82), 0, 'should return 0 litres');
+//     assert.strictEqual(litres(11.8), 5, 'should return 5 litres');
+//     assert.strictEqual(litres(1787), 893, 'should return 893 litres');
+//     assert.strictEqual(litres(0), 0, 'should return 0 litres');
+//   });
+// });
+
+// solution
+
+function litres(time) {
+  return Math.floor(time/2);
+}
+
+// --------------------------------------------------------------------------
+
+// This Kata is intended as a small challenge for my students
+
+// All Star Code Challenge #18
+
+// Create a function that accepts 2 string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+
+// If no occurrences can be found, a count of 0 should be returned.
+
+// ("Hello", "o")  ==>  1
+// ("Hello", "l")  ==>  2
+// ("", "z")       ==>  0
+// Notes:
+
+// The first argument can be an empty string
+// The second string argument will always be of length 1
+
+// sample tests
+
+// describe("Tests", () => {
+//   it("test", () => {
+// Test.assertEquals(strCount('Hello', 'o'), 1);
+// Test.assertEquals(strCount('Hello', 'l'), 2);
+// Test.assertEquals(strCount('', 'z'), 0);
+//   });
+// });
+
+// solution
+
+function strCount(str, letter){  
+  //code here
+  let count = 0
+  let arr = str.split('')
+  
+  for(let i =0; i<arr.length; i++){
+    if(arr[i] === letter){
+      count++
+    }
+  }
+  return count
+}
+
+// --------------------------------------------------------------------------
+
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+// sample tests
+
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Tests", () => {
+//   it("should pass sample tests", () => {
+//     assert.deepEqual(count("aba"), { a: 2, b: 1 }); 
+//     assert.deepEqual(count(""), {});    
+//   });
+// });
+
+// solution
+
+function count (string) {  
+  // The function code should be here
+  const obj = string.split('').reduce( (obj, item) => {
+    if(!obj[item]){
+      obj[item] = 0
+    }
+    obj[item]++
+    return obj
+  }, {}  )
+  console.log(obj)
+  return obj
+}
