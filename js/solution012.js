@@ -49,5 +49,5 @@ const maxSequence = function(arr){
 
 console.log(maxSequence([])) // 0
 console.log(maxSequence([1,2,3,4])) // 10
-console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])) // [4, -1, 2, 1] --> 6
+console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])) // 6
 console.log(maxSequence([ 32, -17, -5, -7, -32, 5, 33, -48, 44, -18 ])) // 44
