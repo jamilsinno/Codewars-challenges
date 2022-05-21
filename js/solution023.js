@@ -18,7 +18,7 @@ function removeElements(arr){
 
     // use filter to return elements
 
-    return arr.filter( (x,i) => i % 2 === 0 )
+    return arr.filter( (_,i) => i % 2 === 0 )
 }
 
 // examples
