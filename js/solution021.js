@@ -29,4 +29,5 @@ function getRealFloor(n) {
 console.log(getRealFloor(1)) // 0
 console.log(getRealFloor(5)) // 4
 console.log(getRealFloor(15)) // 13
+console.log(getRealFloor(18)) // 16
 
