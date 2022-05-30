@@ -2,7 +2,7 @@
 
 // PREP
 
-// I will be passed a string of varying characters. If the string is upper case, make it lower case and vice versa
+// I will be passed a string of varying characters. If the string is upper case, make it lower case and vice versa. Will apply to numbers, special characters but no arrays.
 
 // Return the changed string
 
