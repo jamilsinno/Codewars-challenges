@@ -13,22 +13,30 @@
 
 // Return an array with the lowest ratings removed. Keep the same order. If there are repeating elements remove the first one. If the argument passed is empty, return an empty arrauy.
 
-const removeSmallest = (arr) => {
-    console.log(arr)
-      // set a variable to hold the first value as the minimum value
-      let min = arr[0]
-      let ans = []
+// const removeSmallest = (arr) => {
+//     console.log(arr)
+//       // set a variable to hold the first value as the minimum value
+//       let min = arr[0]
+//       let ans = []
   
-      // use the loop to compare the element with minimum and if it is larger, push it into the answer variable
-      for(let i = 1; i<arr.length; i++){
-          if(arr[i] >= min){ // element larger than minimum
-            ans.push(arr[i])
-          }else if(arr [i] < min){ // element smaller than the minimum don't push it into the ans
-            min = arr[i]
-          }
-      }
-      return ans
-}
+//       // use the loop to compare the element with minimum and if it is larger, push it into the answer variable
+//       for(let i = 1; i<arr.length; i++){
+//           if(arr[i] >= min){ // element larger than minimum
+//             ans.push(arr[i])
+//           }else if(arr [i] < min){ // element smaller than the minimum don't push it into the ans
+//             min = arr[i]
+//           }
+//       }
+//       return ans
+// }
+
+// answer 
+
+function removeSmallest(numbers) {
+    let indexOfMin = numbers.indexOf(Math.min(...numbers));
+    return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+  }
+
 
 // examples
 
