@@ -15,4 +15,4 @@ Everyday I solve at least one codewars problem.
 I sometimes go back to old solutions and refractor my code.
 
 ## Lessons Learned:
-The biggest I learned was how to break down a question. Some questions have specific wording that will change the way you solve the problem. I also learned how to manage my frustration when code doesn't work. 
+The biggest I learned was how to break down a question. Some questions have specific wording that will change the way you solve the problem. I also learned how to manage my frustration when code doesn't work.   
