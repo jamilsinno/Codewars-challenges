@@ -18,7 +18,7 @@
 
 const encryptThis = function(text) {
     // Implement me! :)
-    newText = text.split(' ').map( el => {
+    return newText = text.split(' ').map( el => {
         el.split('')
         firstLetter = el.charCodeAt(0)
 
@@ -31,7 +31,6 @@ const encryptThis = function(text) {
         }
         
     }).join(' ')
-    return newText
 }
 
 console.log(encryptThis("A")) // 65
