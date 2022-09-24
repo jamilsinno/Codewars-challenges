@@ -3,7 +3,7 @@ This file is to track all the codewars problems I have solved.
 
 Note: As of May 9, 2022, I changed the way I upload solutions. Each codewar problem solved will get its own file.
 
-![Codewars profile](profile-updates/11-may-2022.png)
+![Codewars profile](profile-updates/24-sep-2022.png)
 
 ## How It's Made:
 
