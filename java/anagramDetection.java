@@ -3,7 +3,7 @@ import java.util.*;
 public class Kata {
   public static boolean isAnagram(String test, String original) {
     // your code goes here
-    if (test.length() != original.length()) {
+    if (test == null || original == null || test.length() != original.length()) {
       return false;
     }
     
