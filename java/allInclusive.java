@@ -7,11 +7,19 @@ public class Rotations {
       int length = strng.length();
       int i = 0;
       
+      if (length == 0) {
+        return true;
+      }
+      
+      if (arr.size() == 0) {
+        return false;
+      }
+      
       while (i < length) {
-        if (!arr.contains(strng)){
+        String check = strng.substring(i, length) + strng.substring(0, i);
+        if (!arr.contains(check)){
           return false;
         }
-        strng = strng.substring(i, length) + strng.substring(0, i);
         i++;
       }
       
