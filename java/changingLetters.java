@@ -13,7 +13,7 @@ public class Kata {
       charMap.put('u', 'U');
      // Your code here
       
-      for (Map.Entry<Character, Character> entry : charMap.entrySet()) {
+      for (Map.Entry<Character, Character> entry : charmap.entryset()) {
           inputString = inputString.replace(entry.getKey(), entry.getValue());
       }
      
