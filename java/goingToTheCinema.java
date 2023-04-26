@@ -9,8 +9,7 @@ public class Movie {
       
       do {
         sysB += ticket * Math.pow(perc, ++count);
-        check = Math.ceil(sysB);
-      } while (sysA * count <= check);
+      } while (sysA * count <= Math.ceil(sysB));
       
       return count;
     }
