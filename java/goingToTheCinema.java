@@ -7,9 +7,6 @@ public class Movie {
       double sysB = card;
       double check;
       
-      System.out.println("Before A " + sysA);
-      System.out.println("Before B " + sysB);
-      
       do {
         sysB += ticket * Math.pow(perc, ++count);
         check = Math.ceil(sysB);
