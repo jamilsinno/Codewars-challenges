@@ -16,7 +16,7 @@
   }
 
 
-  console.log(disemvowel('This is a test'))
-  console.log(disemvowel('This Is A test'))
-  console.log(disemvowel('Thi$ is @ test'))
+  console.log(disemvowel('This is a test'));
+  console.log(disemvowel('This Is A test'));
+  console.log(disemvowel('Thi$ is @ test'));
   console.log(disemvowel('No offense but,\nYour writing is among the worst I\'ve ever read'))
